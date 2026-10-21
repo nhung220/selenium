@@ -70,8 +70,13 @@ def test_tc06_select_hsk1(logged_in):
     body = hsk.driver.find_element(By.TAG_NAME, 'body').text
     assert 'HSK 1' in body
     assert 'Bài 1' in body
-    assert len(hsk.driver.find_elements(By.XPATH,
-        '//*[self::a or self::button][contains(., "Bài 1")]')) > 0
+    # Tên bài nằm trong tiêu đề; phần tử mở bài có nhãn "Học".
+    links = hsk.driver.find_elements(By.CSS_SELECTOR,
+        'a[href^="/vocabulary/lesson/new-1-lesson-"]')
+    assert {link.get_attribute('href') for link in links} == {
+        hsk.base_url + f'/vocabulary/lesson/new-1-lesson-{i}' for i in [1, 2, 3]
+    }
+    assert all(link.text == 'Học' and link.is_displayed() for link in links)
 
 
 def test_tc07_search_existing_word(logged_in):
