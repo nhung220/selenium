@@ -25,8 +25,9 @@ jobs:
         shell: bash
         run: |
           mkdir -p reports
+          rm -f reports/screenshots/*.png reports/*.json reports/*.xml reports/*.html reports/*.log
           set -o pipefail
-          python scripts/inspect_hsk.py 2>&1 | tee reports/run.log
+          python -m pytest 2>&1 | tee reports/run.log
       - name: Upload report and screenshots
         if: always()
         uses: actions/upload-artifact@v4
