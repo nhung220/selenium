@@ -118,7 +118,103 @@ Workflow chạy khi push lên `main`, tạo pull request hoặc chọn **Actions
 
 ## 7. Kết quả thực nghiệm và hình ảnh
 
-Đang chuẩn bị lượt chạy đầy đủ 10 test case HSK. Kết quả và ảnh của website trước đã được bỏ khỏi phiên bản hiện tại; chưa kết luận PASS/FAIL cho đến khi có bằng chứng thực thi HSK.
+### 7.1. Thông tin lượt chạy
+
+Bằng chứng dưới đây được lấy từ **GitHub Actions – Selenium practice #5**, chạy trên website **https://daln-hsk-app.vercel.app/** ngày **21/10/2026**.
+
+| Thông tin | Giá trị |
+| --- | --- |
+| Bắt đầu / kết thúc pytest | 10:26:41 – 10:27:29, giờ Việt Nam (UTC+7) |
+| Mã nguồn được kiểm thử | `b54bd4fd1624db0ea73ffa8ddb318a8ef0c4a168` |
+| Môi trường | Ubuntu, Python 3.12.15, Chrome/ChromeDriver 155.0.8059.84 |
+| Tổng số test case | 10 |
+| PASS / FAIL / ERROR / SKIP | **10 / 0 / 0 / 0** |
+| Tỷ lệ đạt | **100% trong phạm vi 10 ca đã thực thi** |
+| Thời gian pytest theo log | **48,25 giây**, bao gồm thiết lập và dọn dẹp |
+| Mã thoát | 0 |
+
+Nguồn đối chiếu: [lượt chạy Actions #5](https://github.com/nhung220/selenium/actions/runs/39538559105), [JUnit XML](reports/junit.xml), [JSON kết quả](reports/results.json) và [log thực thi](reports/run.log).
+
+Báo cáo HTML có nhúng ảnh nằm trong artifact **selenium-reports** của lượt chạy trên. Tải và giải nén artifact, rồi mở `report.html` bằng trình duyệt. Repo lưu trực tiếp 10 ảnh PNG và các tệp kết quả để đọc ngay trên GitHub; `reports/report.html` được tạo khi chạy lại bộ test.
+
+### 7.2. Tổng hợp kết quả từng test case
+
+| Mã | Nội dung kiểm thử | Kết quả | Ảnh minh chứng |
+| --- | --- | --- | --- |
+| TC01 | Bắt buộc nhập email và mật khẩu | PASS | [Xem ảnh](reports/screenshots/test_tc01_login_required_fields_call.png) |
+| TC02 | Email không đúng định dạng | PASS | [Xem ảnh](reports/screenshots/test_tc02_invalid_email_format_call.png) |
+| TC03 | Hiện/ẩn mật khẩu | PASS | [Xem ảnh](reports/screenshots/test_tc03_toggle_password_visibility_call.png) |
+| TC04 | Bảo vệ trang tra từ | PASS | [Xem ảnh](reports/screenshots/test_tc04_protected_search_requires_login_call.png) |
+| TC05 | Đăng nhập thành công | PASS | [Xem ảnh](reports/screenshots/test_tc05_login_success_call.png) |
+| TC06 | Chọn HSK 1 | PASS | [Xem ảnh](reports/screenshots/test_tc06_select_hsk1_call.png) |
+| TC07 | Tra từ tồn tại | PASS | [Xem ảnh](reports/screenshots/test_tc07_search_existing_word_call.png) |
+| TC08 | Tra từ không tồn tại | PASS | [Xem ảnh](reports/screenshots/test_tc08_search_no_results_call.png) |
+| TC09 | Ôn tập khi chưa học từ | PASS | [Xem ảnh](reports/screenshots/test_tc09_review_empty_state_call.png) |
+| TC10 | Đăng xuất và chặn lại trang riêng | PASS | [Xem ảnh](reports/screenshots/test_tc10_logout_protects_session_call.png) |
+
+### 7.3. Ảnh minh chứng thực thi
+
+Các ảnh là ảnh chụp cuối từng test trước khi đóng Chrome, lấy nguyên từ artifact của lượt chạy #5. Trạng thái PASS được xác nhận bằng assertion và báo cáo thực thi; một ảnh tĩnh không thể hiện toàn bộ chuỗi thao tác hoặc các thuộc tính HTML đã kiểm tra.
+
+#### Hình 7.1. TC01 – Bắt buộc nhập email và mật khẩu
+
+![TC01 – Bắt buộc nhập email và mật khẩu](reports/screenshots/test_tc01_login_required_fields_call.png)
+
+Biểu mẫu vẫn ở trang đăng nhập và focus ở ô email. Assertion xác nhận cả hai trường thiếu dữ liệu bắt buộc.
+
+#### Hình 7.2. TC02 – Email không đúng định dạng
+
+![TC02 – Email không đúng định dạng](reports/screenshots/test_tc02_invalid_email_format_call.png)
+
+Ô email giữ chuỗi sai định dạng; trình duyệt chặn gửi biểu mẫu. Assertion kiểm tra `validity.typeMismatch`.
+
+#### Hình 7.3. TC03 – Hiện/ẩn mật khẩu
+
+![TC03 – Hiện/ẩn mật khẩu](reports/screenshots/test_tc03_toggle_password_visibility_call.png)
+
+Ảnh ghi nhận trạng thái cuối sau khi ẩn lại mật khẩu. Assertion đã kiểm tra chuỗi chuyển đổi `password → text → password` và giá trị không thay đổi.
+
+#### Hình 7.4. TC04 – Bảo vệ trang tra từ
+
+![TC04 – Bảo vệ trang tra từ](reports/screenshots/test_tc04_protected_search_requires_login_call.png)
+
+Truy cập trực tiếp `/search` khi chưa đăng nhập được chuyển về `/login`.
+
+#### Hình 7.5. TC05 – Đăng nhập thành công
+
+![TC05 – Đăng nhập thành công](reports/screenshots/test_tc05_login_success_call.png)
+
+Trang từ vựng hiển thị tiêu đề Từ Vựng HSK 3.0 và tên tài khoản thử nghiệm Selenium Test sau khi đăng nhập.
+
+#### Hình 7.6. TC06 – Chọn HSK 1
+
+![TC06 – Chọn HSK 1](reports/screenshots/test_tc06_select_hsk1_call.png)
+
+Danh sách bài học HSK 1 xuất hiện, có Bài 1 và liên kết mở bài học.
+
+#### Hình 7.7. TC07 – Tra từ tồn tại
+
+![TC07 – Tra từ tồn tại](reports/screenshots/test_tc07_search_existing_word_call.png)
+
+Kết quả tra cứu hiển thị chữ `你好` và pinyin `nǐ hǎo`.
+
+#### Hình 7.8. TC08 – Tra từ không tồn tại
+
+![TC08 – Tra từ không tồn tại](reports/screenshots/test_tc08_search_no_results_call.png)
+
+Website hiển thị không tìm thấy kết quả và giữ nguyên chuỗi tra cứu.
+
+#### Hình 7.9. TC09 – Ôn tập khi chưa học từ
+
+![TC09 – Ôn tập khi chưa học từ](reports/screenshots/test_tc09_review_empty_state_call.png)
+
+Trang ôn tập hiển thị Xong rồi!, thông báo không có từ cần ôn và nút Học bài mới.
+
+#### Hình 7.10. TC10 – Đăng xuất và chặn lại trang riêng
+
+![TC10 – Đăng xuất và chặn lại trang riêng](reports/screenshots/test_tc10_logout_protects_session_call.png)
+
+Sau khi đăng xuất rồi truy cập lại `/search`, website đưa người dùng về trang đăng nhập.
 
 ## 8. Nhận xét và giới hạn
 

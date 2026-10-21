@@ -1,0 +1,108 @@
+{
+  "started_at": "2026-10-21T10:26:41.701395+07:00",
+  "finished_at": "2026-10-21T10:27:29.968402+07:00",
+  "base_url": "https://daln-hsk-app.vercel.app",
+  "exit_code": 0,
+  "results": [
+    {
+      "test": "test_tc01_login_required_fields",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 1.669,
+      "screenshot": "screenshots/test_tc01_login_required_fields_call.png",
+      "url": "https://daln-hsk-app.vercel.app/login",
+      "browser": "155.0.8059.84",
+      "driver": "155.0.8059.84 (5869fe313571d75152b77813cf0a4ee26a4e6df0-refs/branch-heads/8059@{#1303})"
+    },
+    {
+      "test": "test_tc02_invalid_email_format",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 0.621,
+      "screenshot": "screenshots/test_tc02_invalid_email_format_call.png",
+      "url": "https://daln-hsk-app.vercel.app/login",
+      "browser": "155.0.8059.84",
+      "driver": "155.0.8059.84 (5869fe313571d75152b77813cf0a4ee26a4e6df0-refs/branch-heads/8059@{#1303})"
+    },
+    {
+      "test": "test_tc03_toggle_password_visibility",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 0.476,
+      "screenshot": "screenshots/test_tc03_toggle_password_visibility_call.png",
+      "url": "https://daln-hsk-app.vercel.app/login",
+      "browser": "155.0.8059.84",
+      "driver": "155.0.8059.84 (5869fe313571d75152b77813cf0a4ee26a4e6df0-refs/branch-heads/8059@{#1303})"
+    },
+    {
+      "test": "test_tc04_protected_search_requires_login",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 0.913,
+      "screenshot": "screenshots/test_tc04_protected_search_requires_login_call.png",
+      "url": "https://daln-hsk-app.vercel.app/login",
+      "browser": "155.0.8059.84",
+      "driver": "155.0.8059.84 (5869fe313571d75152b77813cf0a4ee26a4e6df0-refs/branch-heads/8059@{#1303})"
+    },
+    {
+      "test": "test_tc05_login_success",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 0.03,
+      "screenshot": "screenshots/test_tc05_login_success_call.png",
+      "url": "https://daln-hsk-app.vercel.app/vocabulary",
+      "browser": "155.0.8059.84",
+      "driver": "155.0.8059.84 (5869fe313571d75152b77813cf0a4ee26a4e6df0-refs/branch-heads/8059@{#1303})"
+    },
+    {
+      "test": "test_tc06_select_hsk1",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 0.255,
+      "screenshot": "screenshots/test_tc06_select_hsk1_call.png",
+      "url": "https://daln-hsk-app.vercel.app/vocabulary",
+      "browser": "155.0.8059.84",
+      "driver": "155.0.8059.84 (5869fe313571d75152b77813cf0a4ee26a4e6df0-refs/branch-heads/8059@{#1303})"
+    },
+    {
+      "test": "test_tc07_search_existing_word",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 1.271,
+      "screenshot": "screenshots/test_tc07_search_existing_word_call.png",
+      "url": "https://daln-hsk-app.vercel.app/search",
+      "browser": "155.0.8059.84",
+      "driver": "155.0.8059.84 (5869fe313571d75152b77813cf0a4ee26a4e6df0-refs/branch-heads/8059@{#1303})"
+    },
+    {
+      "test": "test_tc08_search_no_results",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 1.323,
+      "screenshot": "screenshots/test_tc08_search_no_results_call.png",
+      "url": "https://daln-hsk-app.vercel.app/search",
+      "browser": "155.0.8059.84",
+      "driver": "155.0.8059.84 (5869fe313571d75152b77813cf0a4ee26a4e6df0-refs/branch-heads/8059@{#1303})"
+    },
+    {
+      "test": "test_tc09_review_empty_state",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 0.884,
+      "screenshot": "screenshots/test_tc09_review_empty_state_call.png",
+      "url": "https://daln-hsk-app.vercel.app/review",
+      "browser": "155.0.8059.84",
+      "driver": "155.0.8059.84 (5869fe313571d75152b77813cf0a4ee26a4e6df0-refs/branch-heads/8059@{#1303})"
+    },
+    {
+      "test": "test_tc10_logout_protects_session",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 1.274,
+      "screenshot": "screenshots/test_tc10_logout_protects_session_call.png",
+      "url": "https://daln-hsk-app.vercel.app/login",
+      "browser": "155.0.8059.84",
+      "driver": "155.0.8059.84 (5869fe313571d75152b77813cf0a4ee26a4e6df0-refs/branch-heads/8059@{#1303})"
+    }
+  ]
+}
