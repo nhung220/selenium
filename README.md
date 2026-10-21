@@ -135,7 +135,70 @@ Link theo dõi: https://github.com/nhung220/selenium/actions
 
 ## 7. Kết quả thực nghiệm
 
-Đang chờ lượt chạy đầu tiên trên GitHub Actions. Chưa xác nhận PASS/FAIL chức năng cho đến khi có log và báo cáo từ lượt chạy thực tế.
+Lượt chạy thực tế ngày **21/10/2026**, từ **09:53:06 đến 09:53:32 (giờ Việt Nam)** trên GitHub Actions.
+
+- **Kết quả: 8 PASSED / 0 FAILED / 0 ERROR / 0 SKIPPED.**
+- Tổng thời gian pytest: **26,57 giây** (bao gồm khởi tạo và đóng các phiên trình duyệt).
+- Môi trường: Ubuntu 24.04.5, Python 3.12.15; Chrome và ChromeDriver **155.0.8059.39**, chạy headless.
+- Commit mã nguồn đã kiểm thử: [`55ed057`](https://github.com/nhung220/selenium/commit/55ed057eb86088174b5b7f8f9b77ddf65ece7561).
+- [Xem lượt chạy và log gốc trên GitHub Actions](https://github.com/nhung220/selenium/actions/runs/39535457512).
+
+### 7.1. Bảng tổng hợp
+
+| Mã | Test case | Kết quả | Ảnh thực tế |
+| --- | --- | --- | --- |
+| TC01 | Đăng nhập thành công | **PASS** | [Xem ảnh](reports/screenshots/test_tc01_login_success_call.png) |
+| TC02 | Đăng nhập sai mật khẩu | **PASS** | [Xem ảnh](reports/screenshots/test_tc02_wrong_password_call.png) |
+| TC03 | Tài khoản bị khóa | **PASS** | [Xem ảnh](reports/screenshots/test_tc03_locked_account_call.png) |
+| TC04 | Thêm sản phẩm vào giỏ | **PASS** | [Xem ảnh](reports/screenshots/test_tc04_add_to_cart_call.png) |
+| TC05 | Xóa sản phẩm khỏi giỏ | **PASS** | [Xem ảnh](reports/screenshots/test_tc05_remove_from_cart_call.png) |
+| TC06 | Sắp xếp giá tăng dần | **PASS** | [Xem ảnh](reports/screenshots/test_tc06_sort_price_low_to_high_call.png) |
+| TC07 | Hoàn tất đặt hàng | **PASS** | [Xem ảnh](reports/screenshots/test_tc07_checkout_success_call.png) |
+| TC08 | Đăng xuất và bảo vệ trang nội bộ | **PASS** | [Xem ảnh](reports/screenshots/test_tc08_logout_call.png) |
+
+Trích nguyên văn phần kết luận từ [log thực thi](reports/run.log):
+
+```text
+============================== 8 passed in 26.57s ==============================
+```
+
+Bằng chứng được lưu trực tiếp trong repo: [JUnit XML](reports/junit.xml), [JSON kết quả và phiên bản trình duyệt](reports/results.json), [log pytest](reports/run.log), [báo cáo HTML](reports/report.html). GitHub hiển thị mã nguồn HTML; để xem giao diện báo cáo, clone repo rồi mở `reports/report.html`, hoặc tải artifact **selenium-reports** của lượt chạy phía trên và giải nén.
+
+### 7.2. Hình ảnh minh chứng của từng test case
+
+Các ảnh bên dưới do Selenium chụp từ trình duyệt ở cuối từng test, trước khi đóng phiên. Ảnh thể hiện trạng thái cuối; các bước trung gian và điều kiện kiểm tra nằm trong mã test. TC08 chụp sau khi thử mở lại trang nội bộ sau đăng xuất.
+
+**Hình 7.1. TC01 – Đăng nhập thành công (PASS)**
+
+![TC01 - Đăng nhập thành công](reports/screenshots/test_tc01_login_success_call.png)
+
+**Hình 7.2. TC02 – Đăng nhập sai mật khẩu (PASS)**
+
+![TC02 - Đăng nhập sai mật khẩu](reports/screenshots/test_tc02_wrong_password_call.png)
+
+**Hình 7.3. TC03 – Tài khoản bị khóa (PASS)**
+
+![TC03 - Tài khoản bị khóa](reports/screenshots/test_tc03_locked_account_call.png)
+
+**Hình 7.4. TC04 – Thêm sản phẩm vào giỏ (PASS)**
+
+![TC04 - Thêm sản phẩm vào giỏ](reports/screenshots/test_tc04_add_to_cart_call.png)
+
+**Hình 7.5. TC05 – Xóa sản phẩm khỏi giỏ (PASS)**
+
+![TC05 - Xóa sản phẩm khỏi giỏ](reports/screenshots/test_tc05_remove_from_cart_call.png)
+
+**Hình 7.6. TC06 – Sắp xếp giá tăng dần (PASS)**
+
+![TC06 - Sắp xếp giá tăng dần](reports/screenshots/test_tc06_sort_price_low_to_high_call.png)
+
+**Hình 7.7. TC07 – Hoàn tất đặt hàng (PASS)**
+
+![TC07 - Hoàn tất đặt hàng](reports/screenshots/test_tc07_checkout_success_call.png)
+
+**Hình 7.8. TC08 – Đăng xuất và bảo vệ trang nội bộ (PASS)**
+
+![TC08 - Đăng xuất và bảo vệ trang nội bộ](reports/screenshots/test_tc08_logout_call.png)
 
 ## 8. Nhận xét và giới hạn
 

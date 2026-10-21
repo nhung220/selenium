@@ -1,0 +1,88 @@
+{
+  "started_at": "2026-10-21T09:53:06.110808+07:00",
+  "finished_at": "2026-10-21T09:53:32.739957+07:00",
+  "base_url": "https://www.saucedemo.com/",
+  "exit_code": 0,
+  "results": [
+    {
+      "test": "test_tc01_login_success",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 1.017,
+      "screenshot": "screenshots/test_tc01_login_success_call.png",
+      "url": "https://www.saucedemo.com/inventory.html",
+      "browser": "155.0.8059.39",
+      "driver": "155.0.8059.39 (3ff7ac5a9224be9156d7f8703a06e22890aafd34-refs/branch-heads/8059@{#935})"
+    },
+    {
+      "test": "test_tc02_wrong_password",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 0.335,
+      "screenshot": "screenshots/test_tc02_wrong_password_call.png",
+      "url": "https://www.saucedemo.com/",
+      "browser": "155.0.8059.39",
+      "driver": "155.0.8059.39 (3ff7ac5a9224be9156d7f8703a06e22890aafd34-refs/branch-heads/8059@{#935})"
+    },
+    {
+      "test": "test_tc03_locked_account",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 0.319,
+      "screenshot": "screenshots/test_tc03_locked_account_call.png",
+      "url": "https://www.saucedemo.com/",
+      "browser": "155.0.8059.39",
+      "driver": "155.0.8059.39 (3ff7ac5a9224be9156d7f8703a06e22890aafd34-refs/branch-heads/8059@{#935})"
+    },
+    {
+      "test": "test_tc04_add_to_cart",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 0.218,
+      "screenshot": "screenshots/test_tc04_add_to_cart_call.png",
+      "url": "https://www.saucedemo.com/cart.html",
+      "browser": "155.0.8059.39",
+      "driver": "155.0.8059.39 (3ff7ac5a9224be9156d7f8703a06e22890aafd34-refs/branch-heads/8059@{#935})"
+    },
+    {
+      "test": "test_tc05_remove_from_cart",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 0.22,
+      "screenshot": "screenshots/test_tc05_remove_from_cart_call.png",
+      "url": "https://www.saucedemo.com/cart.html",
+      "browser": "155.0.8059.39",
+      "driver": "155.0.8059.39 (3ff7ac5a9224be9156d7f8703a06e22890aafd34-refs/branch-heads/8059@{#935})"
+    },
+    {
+      "test": "test_tc06_sort_price_low_to_high",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 0.156,
+      "screenshot": "screenshots/test_tc06_sort_price_low_to_high_call.png",
+      "url": "https://www.saucedemo.com/inventory.html",
+      "browser": "155.0.8059.39",
+      "driver": "155.0.8059.39 (3ff7ac5a9224be9156d7f8703a06e22890aafd34-refs/branch-heads/8059@{#935})"
+    },
+    {
+      "test": "test_tc07_checkout_success",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 1.166,
+      "screenshot": "screenshots/test_tc07_checkout_success_call.png",
+      "url": "https://www.saucedemo.com/checkout-complete.html",
+      "browser": "155.0.8059.39",
+      "driver": "155.0.8059.39 (3ff7ac5a9224be9156d7f8703a06e22890aafd34-refs/branch-heads/8059@{#935})"
+    },
+    {
+      "test": "test_tc08_logout",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 0.818,
+      "screenshot": "screenshots/test_tc08_logout_call.png",
+      "url": "https://www.saucedemo.com/",
+      "browser": "155.0.8059.39",
+      "driver": "155.0.8059.39 (3ff7ac5a9224be9156d7f8703a06e22890aafd34-refs/branch-heads/8059@{#935})"
+    }
+  ]
+}
